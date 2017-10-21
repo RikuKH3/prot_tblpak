@@ -19,10 +19,10 @@ end;
 
 function StringListSortProc(List: TStringList; Index1, Index2: Integer): Integer;
 var
-  i1, i2: Integer;
+  i1, i2: Int64;
 begin
-  i1 := StrToIntDef(List.Names[Index1], -1);
-  i2 := StrToIntDef(List.Names[Index2], -1);
+  i1 := StrToInt64(List.Names[Index1]);
+  i2 := StrToInt64(List.Names[Index2]);
   Result := i1 - i2;
 end;
 
