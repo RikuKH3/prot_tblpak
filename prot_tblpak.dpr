@@ -343,7 +343,7 @@ begin
           r7 := r7 or r9;
         until r8 = 0;
 
-        StringList1.Append(IntToStr(ContentPos) +'='+ IntToHex(ContentID,8) +';'+ IntToStr(ContentPkgNum) +';'+ IntToStr(r7));
+        StringList1.Append(IntToStr(ContentPos) +'='+ IntToHex(ContentID,7) +';'+ IntToStr(ContentPkgNum) +';'+ IntToStr(r7));
       end;
     finally MemoryStream1.Free end;
     StringList1.CustomSort(StringListSortProc);
