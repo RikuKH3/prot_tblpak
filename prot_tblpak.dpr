@@ -151,7 +151,7 @@ begin
         s := Copy(StringList1.ValueFromIndex[x], i+1);
         i := Pos('*', s);
         NormalSize := StrToInt64(Copy(s, 1, i-1));
-        LongWord1 := StrToInt64(StringList1.Names[x]) shl 4 or StrToInt(Copy(s, i+1));
+        LongWord1 := StrToInt(StringList1.Names[x]) shl 4 or StrToInt(Copy(s, i+1));
 
         for i:=31 downto 0 do begin
           XBits := (XBits shl 1) or (LongWord1 shr i and 1);
