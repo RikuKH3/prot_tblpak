@@ -12,7 +12,7 @@ uses
 
 {$SETPEFLAGS IMAGE_FILE_RELOCS_STRIPPED}
 
-function HexToInt(HexStr: string): Integer;
+function HexToInt(HexStr: String): Integer;
 var
   w: Word;
   i: Integer;
@@ -21,9 +21,10 @@ begin
   for i:=1 to Length(HexStr) do begin
     w:=Word(HexStr[i]);
     case w of
-      48..57: Result:=(Result shl 4)+(w-48);
-      65..70,97..102: Result:=(Result shl 4)+(w-55)
-      else begin Result:=0; break end
+      48..57: begin w:=w-48; Result:=(Result shl 4)+w end;
+      65..70: begin w:=w-55; Result:=(Result shl 4)+w end;
+      97..102: begin w:=w-87; Result:=(Result shl 4)+w end
+      else begin Result:=0; exit end
     end;
   end;
 end;
